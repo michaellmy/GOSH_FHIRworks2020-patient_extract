@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Line } from 'react-chartjs-2';
+import { Spin } from 'antd'
 
 
 function generateAges(start, end) {
@@ -91,11 +92,13 @@ export class PatientAgeLine extends Component {
           }    
         ]
         },
+        isReady: false
     }
 
     componentDidMount () {
         axios.get('https://localhost:5001/api/Patient/')
         .then(res => this.processAges(res.data))
+        .then(() => this.setState({isReady: true}))
     }
 
     processAges = (rawResources) => {
@@ -125,11 +128,19 @@ export class PatientAgeLine extends Component {
 
 
     render() {
+      if(this.state.isReady){
         return (
-            <div>
-                <Line data={this.state.data}  height={250} options={options}/>
-            </div>
+          <div>
+              <Line data={this.state.data}  height={250} options={options}/>
+          </div>
         )
+      } else{
+        return (
+          <div>
+            <Spin size="large" style={{marginTop: '35%'}}/>
+          </div>
+        )
+      }
     }
 }
 

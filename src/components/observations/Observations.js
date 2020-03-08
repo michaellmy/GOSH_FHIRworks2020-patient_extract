@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Result, PageHeader, Descriptions, Card, Input, Spin, Breadcrumb } from 'antd';
-import { AreaChartOutlined, HomeOutlined } from '@ant-design/icons';
+import { Result, PageHeader, Descriptions, Card, Input, Button, Breadcrumb, Spin } from 'antd';
+import { HomeOutlined, ReconciliationOutlined } from '@ant-design/icons';
 import BMI from './BMI';
 import Blood from './Blood';
 import Cholesterol from './Cholesterol';
@@ -81,7 +81,7 @@ export class Observations extends Component {
             if('name' in this.state.patient){
                 return (
                     <div>
-                        <Result style={{height:'80%', backgroundColor: '#d8e5f3'}} icon={<AreaChartOutlined />}
+                        <Result style={{height:'80%', backgroundColor: '#d8e5f3'}} icon={<ReconciliationOutlined />}
                         title={`Observations for "${this.state.patient.name[0].given}, ${this.state.patient.name[0].family}"`} />
 
                         <div style={{padding: '20px 15% 50px 15%'}}>
@@ -125,13 +125,23 @@ export class Observations extends Component {
 
             } else{
                 return (
-                    <h1>Not found</h1>
+                    <div style={{textAlign: 'center'}}>
+                        <Result
+                            status="warning"
+                            title="No observations found for this patient ID."
+                            extra={
+                            <Button onClick={() => window.location="/"} type="primary" key="console">
+                                Go Back
+                            </Button>
+                            }
+                        />
+                    </div>
                 )
             }
 
         } else {
             return (
-                <div style={{textAlign: 'center'}}>
+                <div style={{textAlign: 'center', marginTop: '20%'}}>
                     <Spin size="large" />
                 </div>
             )

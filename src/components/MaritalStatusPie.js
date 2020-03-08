@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import {Polar} from 'react-chartjs-2';
+import { Spin } from 'antd'
 
 export class MaritalStatusPie extends Component {
     state = {
@@ -25,11 +26,13 @@ export class MaritalStatusPie extends Component {
             ]
           }]
         },
+        isReady: false
     }
 
     componentDidMount() {
         axios.get('https://localhost:5001/api/Patient/')
         .then(res => this.processMarital(res.data))
+        .then(() => this.setState({isReady: true}))
     }
 
     processMarital = (rawResources) => {
@@ -57,11 +60,19 @@ export class MaritalStatusPie extends Component {
 
 
     render() {
-        return (
-            <div>
-                <Polar data={this.state.data} height={250} />
-            </div>
-        )
+        if(this.state.isReady){
+            return (
+                <div>
+                    <Polar data={this.state.data} height={250} />
+                </div>
+            )
+        } else{ 
+            return (
+                <div>
+                  <Spin size="large" style={{marginTop: '35%'}}/>
+                </div>
+            )
+        }
     }
 }
 

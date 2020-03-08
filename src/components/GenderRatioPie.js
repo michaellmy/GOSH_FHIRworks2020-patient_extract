@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import axios from 'axios'
+import axios from 'axios';
+import { Spin } from 'antd'
 
 
 export class GenderRatioPie extends Component {
@@ -22,12 +23,13 @@ export class GenderRatioPie extends Component {
             ]
           }]
         },
+        isReady: false
     }
 
     componentDidMount() {
         axios.get('https://localhost:5001/api/Patient/')
         .then(res => this.processGender(res.data))
-        
+        .then(() => this.setState({isReady: true}))
     }
 
     processGender = (rawResources) => {
@@ -48,11 +50,20 @@ export class GenderRatioPie extends Component {
     }
 
     render() {
+      if(this.state.isReady){
         return (
-            <div>
-                <Doughnut data={this.state.data} height={250} />
-            </div>
+          <div>
+              <Doughnut data={this.state.data} height={250} />
+          </div>
+      )
+      } else {
+        return (
+          <div>
+            <Spin size="large" style={{marginTop: '35%'}}/>
+          </div>
         )
+      }
+        
     }
 }
 

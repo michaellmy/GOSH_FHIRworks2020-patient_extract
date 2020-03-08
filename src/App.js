@@ -36,12 +36,12 @@ export class App extends Component {
                 />
                   
                 <div style={{padding: '10px 10% 5px 10%'}}>
-                  a0b15d4d-a2d1-4dd4-a096-cc99ddf7f735<br></br>
-                  b86f60b7-1ec5-47df-8a1c-f90b14f810ed<br></br>
-                  ea95f498-7929-4d50-be55-9bf7baee3a8d<br></br>
                   <strong>Search Patient for Observations:</strong>
                   <Search placeholder="Enter Patient ID" size="large" onSearch={value => window.location=`/observations/${value}`} enterButton />
-                  <hr style={{padding: '2px 0 0 0'}}></hr><br></br>
+                  <a href="/observations/a0b15d4d-a2d1-4dd4-a096-cc99ddf7f735">Example 1</a>&emsp;&ensp;
+                  <a href="/observations/b86f60b7-1ec5-47df-8a1c-f90b14f810ed">Example 2</a>&emsp;&ensp;
+                  <a href="/observations/ea95f498-7929-4d50-be55-9bf7baee3a8d">Example 3</a>&emsp;&ensp;
+                  <hr style={{margin: '20px 0 0 0'}}></hr><br></br>
                   <strong>General Statistics of All Patients:</strong>
                 </div>
                 
