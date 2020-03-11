@@ -96,7 +96,7 @@ export class PatientAgeLine extends Component {
     }
 
     componentDidMount () {
-        axios.get('https://localhost:5001/api/Patient/')
+        axios.get('http://localhost:5000/api/Patient/')
         .then(res => this.processAges(res.data))
         .then(() => this.setState({isReady: true}))
     }

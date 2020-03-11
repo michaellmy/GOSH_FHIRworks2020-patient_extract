@@ -5,7 +5,7 @@ A React web-app visualizing patient medical data and information graphically thr
 
 ## Running the web-app
 
-First, fill in creadentials for the .NET Core Web API, then run `dotnet run` to start the REST API server.
+First, fill in creadentials for the .NET Core Web API from [here](https://github.com/greenfrogs/FHIRworks_2020?fbclid=IwAR1jihdcfRBN1821Vu_8rB-YGIo-dFPGEgf_T8nEUnaLTtIQPkrpiNBWCMU) (this version includes caching and removes the need for https) , then run `dotnet run` to start the REST API server.
 
 This web-app can now be deployed by running `npm start`. The web-app will be available at **localhost:3000**
 

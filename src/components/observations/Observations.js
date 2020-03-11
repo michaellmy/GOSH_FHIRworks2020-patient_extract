@@ -27,11 +27,11 @@ export class Observations extends Component {
     }
 
     componentDidMount(){
-        axios.get(`https://localhost:5001/api/Patient/${this.props.match.params.uid}`)
+        axios.get(`http://localhost:5000/api/Patient/${this.props.match.params.uid}`)
         .then(res => this.setState({patient: res.data}))
 
         
-        axios.get(`https://localhost:5001/api/Observation/${this.props.match.params.uid}`)
+        axios.get(`http://localhost:5000/api/Observation/${this.props.match.params.uid}`)
         .then(res => this.setState({observations: res.data}))
         .then(() => this.setState({isReady: true}));
     }
