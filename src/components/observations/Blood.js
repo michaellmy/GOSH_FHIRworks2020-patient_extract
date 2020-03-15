@@ -66,7 +66,7 @@ export class Blood extends Component {
                     <h4>Patient Blood Pressure Over Time</h4>
                     <Result style={{backgroundColor: 'white'}}
                     status="warning"
-                    title="No obeservations found for Blood Pressure"
+                    title="No observations found for Blood Pressure"
                 />
                 </div>
                 
@@ -75,7 +75,7 @@ export class Blood extends Component {
 
         return (
             <div style={cardContainer}>
-                <h4>Blood Pressure Over Observations</h4>
+                <h4>Blood Pressure Recordings Over All Observations</h4>
                 <Row gutter={16}>
                     <Col span={24}>
                         <Card style={{backgroundColor: 'white'}}>

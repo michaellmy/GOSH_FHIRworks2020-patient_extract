@@ -36,7 +36,7 @@ export class App extends Component {
                 />
                   
                 <div style={{padding: '10px 10% 5px 10%'}}>
-                  <strong>Search Patient for Observations:</strong>
+                  <strong>Search Patient for Medical Observations:</strong>
                   <Search placeholder="Enter Patient ID" size="large" onSearch={value => window.location=`/observations/${value}`} enterButton />
                   <a href="/observations/a0b15d4d-a2d1-4dd4-a096-cc99ddf7f735">Example 1</a>&emsp;&ensp;
                   <a href="/observations/b86f60b7-1ec5-47df-8a1c-f90b14f810ed">Example 2</a>&emsp;&ensp;

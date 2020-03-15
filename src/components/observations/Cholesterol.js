@@ -68,7 +68,7 @@ export class Cholesterol extends Component {
                     <h4>Patient Blood Pressure Over Time</h4>
                     <Result style={{backgroundColor: 'white'}}
                     status="warning"
-                    title="No obeservations found for Cholesterol"
+                    title="No observations found for Cholesterol"
                 />
                 </div>
                 
@@ -77,7 +77,7 @@ export class Cholesterol extends Component {
 
         return (
             <div style={cardContainer}>
-                <h4>Cholesterol Over Observations</h4>
+                <h4>Cholesterol Recordings Over All Observations</h4>
                 <Row gutter={16}>
                     <Col span={24}>
                         <Card style={{backgroundColor: 'white'}}>
