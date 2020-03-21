@@ -1,14 +1,15 @@
-# Patient-Extract - Deployment Guide
-Entry for the GOSH_FHIRworks2020 hackathon. 
+# Patient-Extract
+Entry for the GOSH_FHIRworks2020 hackathon.  
+Theme Choice: **2. Graphing data from FHIR records**
 
-A web-app visualizing patient medical data and information graphically through charts and graphs, developed using React.js and Chart.js
+A web-app visualizing patient medical observation data graphically through charts and graphs, developed using React.js and Chart.js
 
 ## Prerequisites
 1) [npm](https://www.npmjs.com/) installed.
 
 ## Running the web-app
 
-First, `git clone` and fill in creadentials for the .NET Core Web API in appsettings.json from [here](https://github.com/greenfrogs/FHIRworks_2020?fbclid=IwAR1jihdcfRBN1821Vu_8rB-YGIo-dFPGEgf_T8nEUnaLTtIQPkrpiNBWCMU) (this version includes caching and removes the need for https), then run the following command to start the dotnet Web API server.
+First, `git clone` the [dotnet Web API](https://github.com/greenfrogs/FHIRworks_2020?fbclid=IwAR1jihdcfRBN1821Vu_8rB-YGIo-dFPGEgf_T8nEUnaLTtIQPkrpiNBWCMU) (this version includes caching and removes the need for https). Then, fill in creadentials for the .NET Core Web API in appsettings.json, and run the following command to start the dotnet Web API server.
 
 ```bash
 dotnet run
@@ -19,7 +20,8 @@ Then, `git clone` this project in a separate directory, and navigate into the di
 ```bash
 npm start
 ```
-The web-app will be available at **localhost:3000**
+The web-app will be available at **localhost:3000**.  
+Note that the dotnet Web API server must be running for this web-app to retrieve patient information.
 
 ## Web-App Endpoints
 
