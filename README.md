@@ -16,7 +16,7 @@ First, `git clone` the [dotnet Web API](https://github.com/greenfrogs/FHIRworks_
 dotnet run
 ```
 
-Then, `git clone` this project in a separate directory, and navigate into the directory containing package.json. The following command can be used to start the web-app: 
+Then, `git clone` this project in a separate directory, and navigate into the directory containing `package.json`. The following command can be used to start the web-app: 
 
 ```bash
 npm start
