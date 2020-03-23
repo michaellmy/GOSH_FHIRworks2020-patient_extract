@@ -2,7 +2,8 @@
 Entry for the GOSH_FHIRworks2020 hackathon.  
 Theme Choice: **2. Graphing data from FHIR records**
 
-A web-app visualizing patient medical observation data graphically through charts and graphs, developed using React.js and Chart.js
+A web-app visualizing patient medical observation data graphically through charts and graphs, developed using React.js and Chart.js.
+Github repository link: [https://github.com/michaellmy/GOSH-FHIRworks2020-patient_extract](https://github.com/michaellmy/GOSH-FHIRworks2020-patient_extract)
 
 ## Prerequisites
 1) [npm](https://www.npmjs.com/) installed.
